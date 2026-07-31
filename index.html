@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#173923">
+<meta property="og:title" content="Baby Perez Baby Shower">
+<meta property="og:description" content="Tap to open your invitation. Saturday, October 17, 2026, from 2–6 PM.">
+<meta property="og:type" content="website">
+<title>Baby Perez Baby Shower</title>
+<style>
+:root {
+  --green:#173923;
+  --green2:#274d34;
+  --cream:#f7f2e8;
+  --paper:#fffdf8;
+  --gold:#c8ab6b;
+  --ink:#173923;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  min-height:100vh;
+  color:var(--ink);
+  font-family:Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at 50% 10%, #fffdf8 0 18%, #f5eee2 48%, #e9dfd0 100%);
+}
+.page {
+  width:min(100%, 920px);
+  margin:auto;
+  padding:28px 18px 60px;
+  text-align:center;
+}
+.eyebrow {
+  margin:0 0 6px;
+  letter-spacing:.32em;
+  font-size:12px;
+  text-transform:uppercase;
+}
+h1 {
+  margin:0;
+  font-weight:500;
+  font-size:clamp(30px,7vw,58px);
+  line-height:1;
+}
+.sub {
+  margin:10px auto 24px;
+  max-width:580px;
+  font:16px/1.5 Arial,sans-serif;
+  color:#405047;
+}
+.scene {
+  position:relative;
+  width:min(96vw, 670px);
+  aspect-ratio:1.12/1;
+  margin:0 auto 14px;
+  perspective:1600px;
+  cursor:pointer;
+  outline:none;
+}
+.scene:focus-visible {
+  outline:4px solid rgba(200,171,107,.65);
+  outline-offset:8px;
+  border-radius:16px;
+}
+.envelope {
+  position:absolute;
+  inset:23% 4% 3%;
+  border-radius:12px;
+  background:linear-gradient(145deg,var(--green2),var(--green));
+  box-shadow:0 24px 50px rgba(18,35,24,.28);
+}
+.lining {
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:repeating-linear-gradient(90deg,var(--cream) 0 26px,var(--green) 26px 52px);
+  clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);
+}
+.envelope::before,.envelope::after {
+  content:"";
+  position:absolute;
+  bottom:0;
+  width:51%;
+  height:100%;
+  z-index:5;
+  background:linear-gradient(145deg,var(--green2),var(--green));
+}
+.envelope::before {
+  left:0;
+  clip-path:polygon(0 0,100% 56%,100% 100%,0 100%);
+}
+.envelope::after {
+  right:0;
+  clip-path:polygon(100% 0,0 56%,0 100%,100% 100%);
+}
+.flap {
+  position:absolute;
+  inset:0 0 auto 0;
+  height:68%;
+  z-index:9;
+  transform-origin:50% 0%;
+  transform:rotateX(0deg);
+  transition:transform 1s cubic-bezier(.2,.74,.2,1), z-index 0s .5s;
+  background:repeating-linear-gradient(90deg,var(--cream) 0 26px,var(--green) 26px 52px);
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  border-radius:12px 12px 0 0;
+  backface-visibility:hidden;
+}
+.card {
+  position:absolute;
+  left:50%;
+  bottom:7%;
+  width:73%;
+  z-index:3;
+  transform:translateX(-50%) translateY(32%);
+  transition:transform 1.15s .28s cubic-bezier(.18,.76,.22,1), filter .8s ease;
+  background:var(--paper);
+  border:1px solid rgba(23,57,35,.24);
+  box-shadow:0 12px 28px rgba(0,0,0,.24);
+}
+.card img { width:100%; display:block; }
+.seal {
+  position:absolute;
+  left:50%;
+  top:56%;
+  transform:translate(-50%,-50%);
+  z-index:12;
+  width:78px;
+  aspect-ratio:1;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:radial-gradient(circle at 38% 32%,#fffdf7 0 8%,#eadfc8 52%,#cbb27d 100%);
+  border:5px solid #dfd0b1;
+  box-shadow:0 6px 16px rgba(0,0,0,.23);
+  font-size:38px;
+  transition:opacity .3s;
+}
+.scene.open .flap {
+  transform:rotateX(-177deg);
+  z-index:0;
+}
+.scene.open .card {
+  transform:translateX(-50%) translateY(-34%);
+  z-index:10;
+  filter:drop-shadow(0 18px 30px rgba(0,0,0,.22));
+}
+.scene.open .seal { opacity:0; pointer-events:none; }
+.open-btn {
+  border:0;
+  border-radius:999px;
+  background:var(--green);
+  color:#fff;
+  padding:14px 24px;
+  font:700 16px Arial,sans-serif;
+  cursor:pointer;
+  box-shadow:0 9px 20px rgba(23,57,35,.2);
+}
+.details {
+  margin:38px auto 0;
+  width:min(100%,760px);
+  background:rgba(255,253,248,.78);
+  border:1px solid rgba(23,57,35,.16);
+  border-radius:22px;
+  padding:26px 20px;
+  box-shadow:0 18px 45px rgba(57,43,24,.08);
+  backdrop-filter:blur(6px);
+}
+.details h2 {
+  margin:0 0 8px;
+  font-size:clamp(26px,5vw,40px);
+  font-weight:500;
+}
+.meta {
+  margin:0 0 24px;
+  font:16px/1.6 Arial,sans-serif;
+}
+.actions {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+.action {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+  padding:12px 14px;
+  border-radius:14px;
+  text-decoration:none;
+  font:700 15px Arial,sans-serif;
+  border:1px solid var(--green);
+  color:var(--green);
+  background:#fffdf9;
+}
+.action.primary {
+  color:white;
+  background:var(--green);
+}
+.note {
+  margin:18px 0 0;
+  font:13px/1.5 Arial,sans-serif;
+  color:#5c665f;
+}
+footer {
+  margin-top:26px;
+  font:12px/1.5 Arial,sans-serif;
+  color:#69726b;
+}
+@media (max-width:600px) {
+  .page { padding-top:20px; }
+  .scene { width:98vw; }
+  .seal { width:62px;font-size:30px; }
+  .actions { grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion:reduce) {
+  * { scroll-behavior:auto!important; }
+  .flap,.card,.seal { transition:none!important; }
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <p class="eyebrow">Sunnidaze Events presents</p>
+  <h1>You’re Invited</h1>
+  <p class="sub">Tap the envelope to reveal the invitation for Baby Perez.</p>
+
+  <section class="scene" id="scene" tabindex="0" role="button" aria-label="Open the Baby Perez invitation">
+    <div class="envelope">
+      <div class="lining"></div>
+      <div class="card"><img src="invitation.png" alt="Baby Perez baby shower invitation"></div>
+      <div class="flap"></div>
+      <div class="seal" aria-hidden="true">⛳</div>
+    </div>
+  </section>
+
+  <button class="open-btn" id="toggle" type="button">Open invitation</button>
+
+  <section class="details" id="details">
+    <h2>Baby Perez Baby Shower</h2>
+    <p class="meta">
+      Saturday, October 17, 2026<br>
+      2:00 PM to 6:00 PM<br>
+      8842 Newcastle Ave, Sherwood Forest, CA 91325
+    </p>
+
+    <div class="actions">
+      <a class="action primary" href="sms:+18186972872?&body=Hi%20Cicely%2C%20I%E2%80%99m%20RSVPing%20for%20the%20Baby%20Perez%20baby%20shower.">Text RSVP to Cicely</a>
+      <a class="action" href="mailto:sunnidazeevents@gmail.com?subject=RSVP%3A%20Baby%20Perez%20Baby%20Shower&body=Hi%20Cicely%2C%0A%0AI%E2%80%99m%20RSVPing%20for%20the%20Baby%20Perez%20baby%20shower.%0A%0AName%3A%0ANumber%20attending%3A%0A">Email RSVP</a>
+      <a class="action" href="https://www.google.com/maps/search/?api=1&query=8842%20Newcastle%20Ave%2C%20Sherwood%20Forest%2C%20CA%2091325" target="_blank" rel="noopener">Get Directions</a>
+      <a class="action" href="baby-perez.ics" download>Add to Calendar</a>
+      <a class="action" href="https://www.amazon.com/baby-reg/search-results?name=Cicely%20Prendiz" target="_blank" rel="noopener">Amazon Registry</a>
+      <a class="action" href="https://www.babylist.com/search?query=Cicely%20Prendiz" target="_blank" rel="noopener">Babylist Registry</a>
+    </div>
+
+    <p class="note">
+      Registry name: Cicely Prendiz. For the most reliable guest experience, replace the two registry-search links with the exact registry URLs when available.
+    </p>
+  </section>
+
+  <footer>Invitation by Sunnidaze Events</footer>
+</main>
+
+<script>
+const scene = document.getElementById('scene');
+const button = document.getElementById('toggle');
+let openedOnce = false;
+
+function setOpen(force) {
+  const open = typeof force === 'boolean' ? force : !scene.classList.contains('open');
+  scene.classList.toggle('open', open);
+  button.textContent = open ? 'Close invitation' : 'Open invitation';
+  scene.setAttribute('aria-label', open ? 'Close the Baby Perez invitation' : 'Open the Baby Perez invitation');
+  if (open && !openedOnce) {
+    openedOnce = true;
+    setTimeout(() => document.getElementById('details').scrollIntoView({behavior:'smooth',block:'start'}), 1250);
+  }
+}
+scene.addEventListener('click', () => setOpen());
+button.addEventListener('click', () => setOpen());
+scene.addEventListener('keydown', e => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    setOpen();
+  }
+});
+</script>
+</body>
+</html>
